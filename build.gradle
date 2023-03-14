@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Testing frameworks
+    compileOnly group: 'junit', name: 'junit', version: '4.13.2'
+    compileOnly group: 'org.mockito', name: 'mockito-core', version: '4.11.0'
+
+    testRuntimeOnly group: 'junit', name: 'junit', version: '4.13.2'
+    testRuntimeOnly group: 'org.mockito', name: 'mockito-core', version: '4.11.0'
+
+    // Java EE
+    compileOnly group: 'javax', name: 'javaee-api', version: '6.0'
+
+}
+
+test {
+    useJUnitPlatform()
+}
