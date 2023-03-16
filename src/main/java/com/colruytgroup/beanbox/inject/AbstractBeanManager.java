@@ -1,4 +1,4 @@
-package com.colruytgroup.beanbox.inject.bean;
+package com.colruytgroup.beanbox.inject;
 
 import javax.el.ELResolver;
 import javax.el.ExpressionFactory;
@@ -10,6 +10,16 @@ import java.util.List;
 import java.util.Set;
 
 public abstract class AbstractBeanManager implements BeanManager {
+
+    @Override
+    public boolean isQualifier(Class<? extends Annotation> annotation) {
+        throw new UnsupportedOperationException("method is not within scope of the project");
+    }
+
+    @Override
+    public boolean isStereotype(Class<? extends Annotation> annotation) {
+        throw new UnsupportedOperationException("method is not within scope of the project");
+    }
 
     @Override
     public Bean<?> getPassivationCapableBean(String s) {

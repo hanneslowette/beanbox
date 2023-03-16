@@ -1,5 +1,7 @@
 package com.colruytgroup.beanbox.inject;
 
+import com.colruytgroup.beanbox.exception.BeanBoxException;
+
 import javax.enterprise.context.spi.CreationalContext;
 import javax.enterprise.inject.InjectionException;
 import javax.enterprise.inject.spi.*;
@@ -26,7 +28,7 @@ public abstract class AbstractInjectionPoint<T, M extends Member> implements Inj
      * @param context
      * @throws InjectionException
      */
-    public abstract void inject(Object instance, BeanManager manager, CreationalContext<?> context) throws InjectionException;
+    public abstract void inject(Object instance, BeanManager manager, CreationalContext<T> context) throws BeanBoxException;
 
     @Override
     public Type getType() {

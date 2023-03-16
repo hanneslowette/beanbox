@@ -5,39 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff9ac947-9761-4ab8-9400-8c3b2406574b" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/context/AbstractContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AbstractAnnotatedCallable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AbstractAnnotatedMember.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AbstractInjectionPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AnnotatedConstructorImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AnnotatedFieldImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AnnotatedMethodImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AnnotatedParameterImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AnnotatedTypeImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/ConstructorInjectionPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/CreationalContextImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/FieldInjectionPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/MethodInjectionPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/bean/AbstractBeanManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/bean/BeanBoxBeanManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/context/MockitoContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/context/PersistenceContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/context/StatefulContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/context/StatelessContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/BeanInjectionTarget.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/InjectionPointValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/colruytgroup/beanbox/BeanBoxTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/colruytgroup/beanbox/TestEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/bean/Bean.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/bean/BeanContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/bean/BeanContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/bean/BeanResolver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/bean/TypeSafeBeanResolver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/bean/context/Context.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/bean/inject/AbstractAnnotated.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AbstractAnnotated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/bean/inject/AbstractAnnotatedMember.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/bean/inject/AbstractInjectionPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AnnotatedHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/bean/inject/AnnotatedMethodImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/bean/inject/AnnotatedTypeImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/bean/inject/InjectionContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/InjectionContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/bean/inject/Injector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/Injector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/bean/inject/Instantiator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/Instantiator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/bean/inject/InvocationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/InvocationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/junit/BeanBoxRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/BeanBoxRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/util/ReflectionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/util/ReflectionUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/BeanBoxRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/BeanBoxRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/context/AbstractContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/context/AbstractContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AbstractInjectionPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AbstractInjectionPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/ConstructorInjectionPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/ConstructorInjectionPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/CreationalContextImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/CreationalContextImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/FieldInjectionPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/FieldInjectionPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/InjectionContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/Injector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/Instantiator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/InvocationContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/MethodInjectionPoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/bean/AbstractBeanManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AbstractBeanManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/bean/BeanBoxBeanManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/BeanBoxBeanManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/bean/BeanContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/BeanContainer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,23 +63,54 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration name="BeanBoxTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.colruytgroup.beanbox.BeanBoxTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.BeanBoxTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -98,6 +123,7 @@
       <workItem from="1678624106586" duration="67000" />
       <workItem from="1678624179446" duration="20098000" />
       <workItem from="1678779974634" duration="17078000" />
+      <workItem from="1678953153139" duration="9505000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1678775227327</created>
@@ -111,6 +137,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
