@@ -4,34 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff9ac947-9761-4ab8-9400-8c3b2406574b" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/context/MockitoContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/context/PersistenceContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/context/StatefulContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/context/StatelessContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/BeanInjectionTarget.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/InjectionPointValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/colruytgroup/beanbox/BeanBoxTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/colruytgroup/beanbox/TestEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="ff9ac947-9761-4ab8-9400-8c3b2406574b" name="Changes" comment="Start of contexts">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/annotation/PersistenceContextParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/annotation/TransactionalTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/BeanBoxRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/BeanBoxRunner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/context/AbstractContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/context/AbstractContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AbstractInjectionPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AbstractInjectionPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/ConstructorInjectionPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/ConstructorInjectionPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/CreationalContextImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/CreationalContextImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/FieldInjectionPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/FieldInjectionPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/InjectionContext.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/Injector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/Instantiator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/InvocationContext.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/MethodInjectionPoint.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/bean/AbstractBeanManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AbstractBeanManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/bean/BeanBoxBeanManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/BeanBoxBeanManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/bean/BeanContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/BeanContainer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +30,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiPersistence">
+    <option name="context" value="docker-desktop" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -123,7 +103,7 @@
       <workItem from="1678624106586" duration="67000" />
       <workItem from="1678624179446" duration="20098000" />
       <workItem from="1678779974634" duration="17078000" />
-      <workItem from="1678953153139" duration="9505000" />
+      <workItem from="1678953153139" duration="9868000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1678775227327</created>
@@ -132,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678775227327</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Start of contexts">
+      <created>1678963067528</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678963067528</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +138,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="Start of contexts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start of contexts" />
   </component>
 </project>
