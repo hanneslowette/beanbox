@@ -1,4 +1,6 @@
-package com.colruytgroup.beanbox.bean.inject;
+package com.colruytgroup.beanbox.inject;
+
+import com.colruytgroup.beanbox.util.ReflectionUtil;
 
 import javax.enterprise.inject.spi.Annotated;
 import java.lang.annotation.Annotation;
@@ -10,41 +12,37 @@ import java.util.Set;
  */
 public abstract class AbstractAnnotated implements Annotated {
 
-    /**
-     *
-     */
-    private final Class<?> baseClass;
-
-    /**
-     *
-     */
     private final Set<Annotation> annotations;
+    private final Set<Type> typeClosure;
 
-
-
-    @Override
-    public Type getBaseType() {
-        return null;
+    public AbstractAnnotated(Set<Type> typeClosure, Set<Annotation> annotations) {
+        this.annotations = annotations;
+        this.typeClosure = typeClosure;
     }
 
     @Override
     public Set<Type> getTypeClosure() {
-        return null;
+        return typeClosure;
     }
 
     @Override
     public <T extends Annotation> T getAnnotation(Class<T> aClass) {
+        for (Annotation annotation : annotations) {
+            if (annotation.getClass() == aClass) {
+                return aClass.cast(annotation);
+            }
+        }
         return null;
     }
 
     @Override
     public Set<Annotation> getAnnotations() {
-        return null;
+        return annotations;
     }
 
     @Override
     public boolean isAnnotationPresent(Class<? extends Annotation> aClass) {
-        return false;
+        return this.getAnnotation(aClass) != null;
     }
 
 }

@@ -1,7 +1,8 @@
 # BeanBox
 
-This library is a testing library for Java EE7 specification applications. This does not conform
-to the EE7 specifications fully but is aiming to support these:
+Tiny "mildly Java EE7 specification compliant" testing library for EJB applications. Does not handle remote EJBs.
+
+# Supported features
 
 - Programming model
   - Managed beans implemented by a Java class

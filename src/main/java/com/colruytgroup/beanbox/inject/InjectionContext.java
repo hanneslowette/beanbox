@@ -1,6 +1,6 @@
-package com.colruytgroup.beanbox.bean.inject;
+package com.colruytgroup.beanbox.inject;
 
-import com.colruytgroup.beanbox.bean.BeanContainer;
+import com.colruytgroup.beanbox.inject.bean.BeanContainer;
 
 import javax.enterprise.context.spi.CreationalContext;
 

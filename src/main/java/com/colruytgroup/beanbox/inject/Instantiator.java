@@ -1,4 +1,4 @@
-package com.colruytgroup.beanbox.bean.inject;
+package com.colruytgroup.beanbox.inject;
 
 import com.colruytgroup.beanbox.exception.BeanInstantiationException;
 
