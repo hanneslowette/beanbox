@@ -12,10 +12,12 @@ import java.util.Set;
  */
 public abstract class AbstractAnnotated implements Annotated {
 
+    private final Type baseType;
     private final Set<Annotation> annotations;
     private final Set<Type> typeClosure;
 
-    public AbstractAnnotated(Set<Type> typeClosure, Set<Annotation> annotations) {
+    public AbstractAnnotated(Type baseType, Set<Type> typeClosure, Set<Annotation> annotations) {
+        this.baseType = baseType;
         this.annotations = annotations;
         this.typeClosure = typeClosure;
     }
@@ -28,7 +30,7 @@ public abstract class AbstractAnnotated implements Annotated {
     @Override
     public <T extends Annotation> T getAnnotation(Class<T> aClass) {
         for (Annotation annotation : annotations) {
-            if (annotation.getClass() == aClass) {
+            if (aClass.equals(annotation.annotationType())) {
                 return aClass.cast(annotation);
             }
         }
@@ -45,4 +47,8 @@ public abstract class AbstractAnnotated implements Annotated {
         return this.getAnnotation(aClass) != null;
     }
 
+    @Override
+    public Type getBaseType() {
+        return baseType;
+    }
 }

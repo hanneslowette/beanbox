@@ -6,6 +6,7 @@ import javax.enterprise.inject.spi.AnnotatedMethod;
 import javax.enterprise.inject.spi.AnnotatedType;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
+import java.util.HashSet;
 import java.util.Set;
 
 public class AnnotatedTypeImpl<T> extends AbstractAnnotated implements AnnotatedType<T> {
@@ -17,15 +18,12 @@ public class AnnotatedTypeImpl<T> extends AbstractAnnotated implements Annotated
 
     public AnnotatedTypeImpl(Class<T> type,
                              Set<Type> typeClosure,
-                             Set<Annotation> annotations,
-                             Set<AnnotatedConstructor<T>> constructors,
-                             Set<AnnotatedMethod<? super T>> methods,
-                             Set<AnnotatedField<? super T>> fields) {
-        super(typeClosure, annotations);
+                             Set<Annotation> annotations) {
+        super(type, typeClosure, annotations);
         this.type = type;
-        this.constructors = constructors;
-        this.methods = methods;
-        this.fields = fields;
+        this.constructors = new HashSet<>();
+        this.methods = new HashSet<>();
+        this.fields = new HashSet<>();
     }
 
     @Override
@@ -53,4 +51,13 @@ public class AnnotatedTypeImpl<T> extends AbstractAnnotated implements Annotated
         return Type.class;
     }
 
+    @Override
+    public String toString() {
+        return "AnnotatedTypeImpl{" +
+                "type=" + type +
+                ", constructors=" + constructors +
+                ", methods=" + methods +
+                ", fields=" + fields +
+                '}';
+    }
 }

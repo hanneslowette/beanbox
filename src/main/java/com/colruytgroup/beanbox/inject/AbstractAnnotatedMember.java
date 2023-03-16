@@ -13,8 +13,8 @@ public abstract class AbstractAnnotatedMember<BaseClass extends Member, T> exten
     protected final BaseClass member;
     private final AnnotatedType<T> parent;
 
-    public AbstractAnnotatedMember(Set<Type> typeClosure, Set<Annotation> annotations, BaseClass member, AnnotatedType<T> parent) {
-        super(typeClosure, annotations);
+    public AbstractAnnotatedMember(Type baseType, Set<Annotation> annotations, BaseClass member, AnnotatedType<T> parent) {
+        super(baseType, parent.getTypeClosure(), annotations);
         this.member = member;
         this.parent = parent;
     }
@@ -34,4 +34,11 @@ public abstract class AbstractAnnotatedMember<BaseClass extends Member, T> exten
         return parent;
     }
 
+    @Override
+    public String toString() {
+        return "AbstractAnnotatedMember{" +
+                "annotations=" + getAnnotations() +
+                "member=" + member +
+                '}';
+    }
 }

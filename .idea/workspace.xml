@@ -4,11 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff9ac947-9761-4ab8-9400-8c3b2406574b" name="Changes" comment="Start of contexts">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/annotation/PersistenceContextParam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/annotation/TransactionalTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/context/AbstractContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/context/AbstractContext.java" afterDir="false" />
+    <list default="true" id="ff9ac947-9761-4ab8-9400-8c3b2406574b" name="Changes" comment="little more clear on the readme">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/BeanContainerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/InjectionTargetImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/InjectionTargets.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/colruytgroup/beanbox/TestEJB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/BeanBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/BeanBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AbstractAnnotated.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AbstractAnnotated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AbstractAnnotatedCallable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AbstractAnnotatedCallable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AbstractAnnotatedMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AbstractAnnotatedMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AnnotatedConstructorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AnnotatedConstructorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AnnotatedFieldImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AnnotatedFieldImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AnnotatedHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AnnotatedHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AnnotatedMethodImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AnnotatedMethodImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AnnotatedParameterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AnnotatedParameterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AnnotatedTypeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AnnotatedTypeImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/BeanBoxBeanManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/BeanBoxBeanManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/BeanContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/BeanContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/util/ReflectionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/util/ReflectionUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/colruytgroup/beanbox/BeanBoxTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/colruytgroup/beanbox/BeanBoxTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/colruytgroup/beanbox/TestEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/colruytgroup/beanbox/TestEntity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,9 +72,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
     "vue.rearranger.settings.migration": "true"
   }
@@ -103,7 +121,7 @@
       <workItem from="1678624106586" duration="67000" />
       <workItem from="1678624179446" duration="20098000" />
       <workItem from="1678779974634" duration="17078000" />
-      <workItem from="1678953153139" duration="9868000" />
+      <workItem from="1678953153139" duration="19880000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1678775227327</created>
@@ -119,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678963067528</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="little more clear on the readme">
+      <created>1678963420911</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1678963420911</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,6 +164,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="Start of contexts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start of contexts" />
+    <MESSAGE value="little more clear on the readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="little more clear on the readme" />
   </component>
 </project>

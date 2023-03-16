@@ -6,20 +6,30 @@ import javax.enterprise.inject.spi.AnnotatedType;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Member;
 import java.lang.reflect.Type;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
 public abstract class AbstractAnnotatedCallable<BaseClass extends Member, T> extends AbstractAnnotatedMember<BaseClass, T> implements AnnotatedCallable<T> {
 
-    private List<AnnotatedParameter<T>> parameters;
+    private final List<AnnotatedParameter<T>> parameters;
 
-    public AbstractAnnotatedCallable(Set<Type> typeClosure, Set<Annotation> annotations, BaseClass member, AnnotatedType<T> parent, List<AnnotatedParameter<T>> parameters) {
-        super(typeClosure, annotations, member, parent);
-        this.parameters = parameters;
+    public AbstractAnnotatedCallable(Type baseType, Set<Annotation> annotations, BaseClass member, AnnotatedType<T> parent) {
+        super(baseType, annotations, member, parent);
+        this.parameters = new LinkedList<>();
     }
 
     @Override
     public List<AnnotatedParameter<T>> getParameters() {
-        return null;
+        return parameters;
+    }
+
+    @Override
+    public String toString() {
+        return "AbstractAnnotatedCallable{" +
+                "annotations=" + getAnnotations() +
+                "parameters=" + parameters +
+                ", member=" + member +
+                '}';
     }
 }

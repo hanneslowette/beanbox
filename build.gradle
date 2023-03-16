@@ -10,15 +10,17 @@ repositories {
 }
 
 dependencies {
+    // Java EE
+    compileOnly group: 'javax', name: 'javaee-api', version: '6.0'
+
     // Testing frameworks
     compileOnly group: 'junit', name: 'junit', version: '4.13.2'
     compileOnly group: 'org.mockito', name: 'mockito-core', version: '4.11.0'
 
+    // Test dependencies
     testImplementation group: 'junit', name: 'junit', version: '4.13.2'
     testImplementation group: 'org.mockito', name: 'mockito-core', version: '4.11.0'
-
-    // Java EE
-    compileOnly group: 'javax', name: 'javaee-api', version: '6.0'
+    testImplementation group: 'j2ee', name: 'j2ee', version: '6.0'
 
 }
 

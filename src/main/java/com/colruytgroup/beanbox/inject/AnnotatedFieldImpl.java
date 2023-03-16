@@ -9,8 +9,8 @@ import java.util.Set;
 
 public class AnnotatedFieldImpl<T> extends AbstractAnnotatedMember<Field, T> implements AnnotatedField<T> {
 
-    public AnnotatedFieldImpl(Set<Type> typeClosure, Set<Annotation> annotations, Field member, AnnotatedType<T> parent) {
-        super(typeClosure, annotations, member, parent);
+    public AnnotatedFieldImpl(Type baseType, Set<Annotation> annotations, Field member, AnnotatedType<T> parent) {
+        super(baseType, annotations, member, parent);
     }
 
     @Override
@@ -18,8 +18,4 @@ public class AnnotatedFieldImpl<T> extends AbstractAnnotatedMember<Field, T> imp
         return super.member;
     }
 
-    @Override
-    public Type getBaseType() {
-        return Field.class;
-    }
 }

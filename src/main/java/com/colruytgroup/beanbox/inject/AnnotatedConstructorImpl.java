@@ -11,8 +11,8 @@ import java.util.Set;
 
 public class AnnotatedConstructorImpl<T> extends AbstractAnnotatedCallable<Constructor<T>, T> implements AnnotatedConstructor<T> {
 
-    public AnnotatedConstructorImpl(Set<Type> typeClosure, Set<Annotation> annotations, Constructor<T> member, AnnotatedType<T> parent, List<AnnotatedParameter<T>> parameters) {
-        super(typeClosure, annotations, member, parent, parameters);
+    public AnnotatedConstructorImpl(Type baseType, Set<Annotation> annotations, Constructor<T> member, AnnotatedType<T> parent) {
+        super(baseType, annotations, member, parent);
     }
 
     @Override
@@ -20,8 +20,4 @@ public class AnnotatedConstructorImpl<T> extends AbstractAnnotatedCallable<Const
         return super.member;
     }
 
-    @Override
-    public Type getBaseType() {
-        return Constructor.class;
-    }
 }

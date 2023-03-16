@@ -11,18 +11,13 @@ import java.util.Set;
 
 public class AnnotatedMethodImpl<T> extends AbstractAnnotatedCallable<Method, T> implements AnnotatedMethod<T> {
 
-    public AnnotatedMethodImpl(Set<Type> typeClosure, Set<Annotation> annotations, Method member, AnnotatedType<T> parent, List<AnnotatedParameter<T>> parameters) {
-        super(typeClosure, annotations, member, parent, parameters);
+    public AnnotatedMethodImpl(Type baseType, Set<Annotation> annotations, Method member, AnnotatedType<T> parent) {
+        super(baseType, annotations, member, parent);
     }
 
     @Override
     public Method getJavaMember() {
         return super.member;
-    }
-
-    @Override
-    public Type getBaseType() {
-        return Method.class;
     }
 
 }

@@ -16,9 +16,11 @@ import java.util.Set;
 public class BeanBoxBeanManager extends AbstractBeanManager {
 
     private final Map<Class<? extends Annotation>, Context> contextMap;
+    private final BeanContainer container;
 
     public BeanBoxBeanManager() {
         this.contextMap = new HashMap<>();
+        this.container = new BeanContainerImpl();
     }
 
     public void addContext(Context context) {
@@ -29,12 +31,22 @@ public class BeanBoxBeanManager extends AbstractBeanManager {
     }
 
     @Override
+    public <X> Bean<? extends X> resolve(Set<Bean<? extends X>> set) {
+        return container.resolve(set);
+    }
+
+    @Override
     public <T> AnnotatedType<T> createAnnotatedType(Class<T> aClass) {
-        return null;
+        return AnnotatedHelper.introspect(aClass);
     }
 
     @Override
     public <T> InjectionTarget<T> createInjectionTarget(AnnotatedType<T> annotatedType) {
+        return null;
+    }
+
+    @Override
+    public <T> CreationalContext<T> createCreationalContext(Contextual<T> contextual) {
         return null;
     }
 
@@ -49,38 +61,28 @@ public class BeanBoxBeanManager extends AbstractBeanManager {
     }
 
     @Override
-    public <T> CreationalContext<T> createCreationalContext(Contextual<T> contextual) {
-        return null;
-    }
-
-    @Override
-    public Set<Bean<?>> getBeans(Type type, Annotation... annotations) {
-        return null;
-    }
-
-    @Override
-    public Set<Bean<?>> getBeans(String s) {
-        return null;
-    }
-
-    @Override
-    public <X> Bean<? extends X> resolve(Set<Bean<? extends X>> set) {
-        return null;
-    }
-
-    @Override
     public void validate(InjectionPoint injectionPoint) {
 
     }
 
     @Override
-    public boolean isScope(Class<? extends Annotation> annotation) {
-        return contextMap.containsKey(annotation);
+    public Set<Bean<?>> getBeans(Type type, Annotation... annotations) {
+        return container.lookup(type, annotations);
+    }
+
+    @Override
+    public Set<Bean<?>> getBeans(String s) {
+        return container.forName(s);
     }
 
     @Override
     public boolean isNormalScope(Class<? extends Annotation> annotation) {
         return true; // all scopes are normal scopes in this implementation
+    }
+
+    @Override
+    public boolean isScope(Class<? extends Annotation> annotation) {
+        return contextMap.containsKey(annotation);
     }
 
     @Override

@@ -12,8 +12,8 @@ public class AnnotatedParameterImpl<T> extends AbstractAnnotated implements Anno
     private final int position;
     private final AnnotatedCallable<T> declaringCallable;
 
-    public AnnotatedParameterImpl(Set<Type> typeClosure, Set<Annotation> annotations, int position, AnnotatedCallable<T> declaringCallable) {
-        super(typeClosure, annotations);
+    public AnnotatedParameterImpl(Type baseType, Set<Type> typeClosure, Set<Annotation> annotations, int position, AnnotatedCallable<T> declaringCallable) {
+        super(baseType, typeClosure, annotations);
 
         this.position = position;
         this.declaringCallable = declaringCallable;
@@ -30,8 +30,10 @@ public class AnnotatedParameterImpl<T> extends AbstractAnnotated implements Anno
     }
 
     @Override
-    public Type getBaseType() {
-        return Parameter.class;
+    public String toString() {
+        return "AnnotatedParameterImpl{" +
+                "annotations=" + getAnnotations() +
+                "position=" + position +
+                '}';
     }
-
 }

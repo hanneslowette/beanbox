@@ -1,33 +1,29 @@
 package com.colruytgroup.beanbox;
 
-import java.util.concurrent.atomic.AtomicReference;
+import com.colruytgroup.beanbox.context.MockitoContext;
+import com.colruytgroup.beanbox.context.PersistenceContext;
+import com.colruytgroup.beanbox.context.StatefulContext;
+import com.colruytgroup.beanbox.context.StatelessContext;
+import com.colruytgroup.beanbox.exception.BeanBoxException;
+import com.colruytgroup.beanbox.inject.BeanBoxBeanManager;
 
 public class BeanBox {
 
-    /**
-     *
-     */
-    private static final AtomicReference<BeanBox> INSTANCE = new AtomicReference<>();
+    private final BeanBoxBeanManager manager;
 
-    /**
-     *
-     * @param currentContextFactory
-     * @return the initialized container
-     */
-//    public static BeanBox initialize(CurrentContextFactory currentContextFactory) {
-//        ArcContainerImpl container = INSTANCE.get();
-//        if (container == null) {
-//            synchronized (INSTANCE) {
-//                container = INSTANCE.get();
-//                if (container == null) {
-//                    // Set the container instance first because Arc.container() can be used within ArcContainerImpl.init()
-//                    container = new ArcContainerImpl(currentContextFactory);
-//                    INSTANCE.set(container);
-//                    container.init();
-//                }
-//            }
-//        }
-//        return container;
-//    }
+    private BeanBox(BeanBoxBeanManager manager) {
+        this.manager = manager;
+    }
+
+    public static BeanBox create() throws BeanBoxException {
+        BeanBoxBeanManager manager = new BeanBoxBeanManager();
+
+        manager.addContext(new MockitoContext());
+        manager.addContext(new StatefulContext());
+        manager.addContext(new StatelessContext());
+        manager.addContext(new PersistenceContext());
+
+        return new BeanBox(manager);
+    }
 
 }
