@@ -48,7 +48,7 @@ public class AnnotatedTypeImpl<T> extends AbstractAnnotated implements Annotated
 
     @Override
     public Type getBaseType() {
-        return Type.class;
+        return type;
     }
 
     @Override

@@ -3,7 +3,6 @@ package com.colruytgroup.beanbox.inject;
 import javax.enterprise.inject.InjectionException;
 import javax.enterprise.inject.spi.Bean;
 import java.lang.annotation.Annotation;
-import java.lang.reflect.Type;
 import java.util.*;
 
 /**
@@ -11,7 +10,7 @@ import java.util.*;
  */
 public class BeanContainerImpl implements BeanContainer {
 
-    private final Map<Type, Bean<?>> beans;
+    private final Map<Class<?>, Bean<?>> beans;
 
     public BeanContainerImpl() {
         this.beans = new HashMap<>();
@@ -23,7 +22,7 @@ public class BeanContainerImpl implements BeanContainer {
     }
 
     @Override
-    public Set<Bean<?>> lookup(Type type, Annotation... annotations) {
+    public Set<Bean<?>> lookup(Class<?> type, Annotation... annotations) {
         if (annotations.length > 0) {
             Set<Bean<?>> qualifiedBeans = new HashSet<>();
             Bean<?> bean = beans.get(type);
@@ -63,4 +62,8 @@ public class BeanContainerImpl implements BeanContainer {
         throw new InjectionException();
     }
 
+    @Override
+    public boolean exists(Class<?> type) {
+        return beans.containsKey(type);
+    }
 }

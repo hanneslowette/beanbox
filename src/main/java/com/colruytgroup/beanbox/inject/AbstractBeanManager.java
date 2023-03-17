@@ -75,4 +75,10 @@ public abstract class AbstractBeanManager implements BeanManager {
     public ExpressionFactory wrapExpressionFactory(ExpressionFactory expressionFactory) {
         throw new UnsupportedOperationException("method is not within scope of the project");
     }
+
+    @Override
+    public void validate(InjectionPoint injectionPoint) {
+        throw new UnsupportedOperationException("method is not within scope of the project");
+    }
+
 }

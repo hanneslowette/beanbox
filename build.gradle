@@ -1,9 +1,22 @@
 plugins {
     id 'java'
+    id 'maven-publish'
 }
 
-group 'org.example'
+group 'com.colruytgroup'
 version '1.0-SNAPSHOT'
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.colruytgroup'
+            artifactId = 'beanbox'
+            version = '1.0-SNAPSHOT'
+
+            from components.java
+        }
+    }
+}
 
 plugins.withType(JavaPlugin) {
     sourceCompatibility = '1.7'
@@ -18,6 +31,11 @@ dependencies {
     // Java EE
     compileOnly group: 'javax', name: 'javaee-api', version: '6.0'
 
+    // Logging
+    implementation(group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.17.2')
+    implementation(group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.17.2')
+    implementation(group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.17.2')
+
     // Testing frameworks
     compileOnly group: 'junit', name: 'junit', version: '4.13.2'
     compileOnly group: 'org.mockito', name: 'mockito-core', version: '4.11.0'
@@ -26,5 +44,7 @@ dependencies {
     testImplementation group: 'junit', name: 'junit', version: '4.13.2'
     testImplementation group: 'org.mockito', name: 'mockito-core', version: '4.11.0'
     testImplementation group: 'j2ee', name: 'j2ee', version: '6.0'
-
+    testImplementation(group: 'org.apache.openjpa', name: 'openjpa-persistence', version: '3.2.2')
+    testImplementation(group: 'org.apache.openjpa', name: 'openjpa', version: '3.2.2')
+    testImplementation(group: 'com.h2database', name: 'h2', version: '2.1.214')
 }

@@ -3,7 +3,6 @@ package com.colruytgroup.beanbox.util;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -29,7 +28,7 @@ public class ReflectionUtil {
      *
      * @param type The type to get the closure for
      * @param hierarchy The set containing the superclass' current hierarchy
-     * @return
+     * @return The type closure
      */
     private static Set<Type> resolveInterfaceClosure(Class<?> type, Set<Type> hierarchy) {
         if (type.getInterfaces().length == 0) {
@@ -57,7 +56,8 @@ public class ReflectionUtil {
     }
 
     /**
-     * Helper method so we don't have to suppress unchecked casts everywhere
+     * Helper method so we don't have to suppress unchecked casts everywhere. Dangerous as it
+     * forces a cast and might run into incompatibility problems
      *
      * @param o the object to be cast
      * @return o as type T

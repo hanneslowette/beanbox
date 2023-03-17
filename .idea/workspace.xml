@@ -4,28 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff9ac947-9761-4ab8-9400-8c3b2406574b" name="Changes" comment="start to injection targets">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/exception/BeanBoxRuntimeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/DefaultBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/DefaultInstantiator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/ParameterInjectionPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="ff9ac947-9761-4ab8-9400-8c3b2406574b" name="Changes" comment="BeanBox v1.0.0">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/context/PersistenceBeanContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AbstractCallableInjectionPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AbstractInjectionTarget.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/InjectionPoints.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/MethodInjectionPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/colruytgroup/beanbox/BeanBoxRunnerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/log4j2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/BeanBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/BeanBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/BeanBoxRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/BeanBoxRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/annotation/TransactionalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/annotation/Transactional.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/context/AbstractContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/context/MockitoContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/context/MockitoContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/context/PersistenceContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/context/StatefulContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/context/StatefulContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/context/StatelessContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/context/StatelessContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AbstractBeanManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AbstractBeanManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AbstractInjectionPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AbstractInjectionPoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AnnotatedHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AnnotatedHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AnnotatedTypeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/AnnotatedTypeImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/BeanBoxBeanManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/BeanBoxBeanManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/BeanContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/BeanContainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/BeanContainerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/BeanContainerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/BeanInjectionTarget.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/ConstructorInjectionPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/ConstructorInjectionPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/CreationalContextImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/DummyCreationalContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/DefaultBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/DefaultBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/DefaultInstantiator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/DefaultInstantiator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/FieldInjectionPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/FieldInjectionPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/InjectionTargetImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/InjectionTargetImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/InjectionTargetImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/EagerInjectionTarget.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/InjectionTargets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/InjectionTargets.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/Instantiator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/Instantiator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/util/ReflectionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/util/ReflectionUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/colruytgroup/beanbox/BeanBoxTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/colruytgroup/beanbox/BeanBoxTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/colruytgroup/beanbox/TestEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/colruytgroup/beanbox/TestEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/colruytgroup/beanbox/TestEJB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/colruytgroup/beanbox/TestEJB.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +74,18 @@
                 <item name="beanbox" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="beanbox" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="documentation" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="beanbox" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="publishing" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -103,6 +129,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/hle5p7q/289scape/beanbox/src/test/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -115,7 +142,38 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.BeanBoxTest.beforeTest">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hle5p7q\289scape\beanbox\src\test\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hle5p7q\289scape\beanbox\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.beanbox [test]">
+    <configuration name="BeanBoxRunnerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.colruytgroup.beanbox.BeanBoxRunnerTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="BeanBoxTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -139,25 +197,44 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="BeanBoxTest.beforeTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="beanbox [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.colruytgroup.beanbox.BeanBoxTest.beforeTest&quot;" />
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="beanbox [publishToMavenLocal]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="publishToMavenLocal" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
@@ -185,8 +262,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.BeanBoxTest.beforeTest" />
         <item itemvalue="Gradle.beanbox [test]" />
+        <item itemvalue="Gradle.beanbox [publishToMavenLocal]" />
+        <item itemvalue="Gradle.beanbox [build]" />
+        <item itemvalue="Gradle.BeanBoxRunnerTest" />
         <item itemvalue="Gradle.BeanBoxTest" />
       </list>
     </recent_temporary>
@@ -204,6 +283,7 @@
       <workItem from="1678624179446" duration="20098000" />
       <workItem from="1678779974634" duration="17078000" />
       <workItem from="1678953153139" duration="26978000" />
+      <workItem from="1679040861155" duration="23159000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1678775227327</created>
@@ -233,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678975325552</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="start to injection targets">
+      <created>1679040871143</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1679040871143</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,6 +343,27 @@
     <MESSAGE value="little more clear on the readme" />
     <MESSAGE value="Injection targets" />
     <MESSAGE value="start to injection targets" />
-    <option name="LAST_COMMIT_MESSAGE" value="start to injection targets" />
+    <MESSAGE value="BeanBox v1.0.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="BeanBox v1.0.0" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/colruytgroup/beanbox/inject/Instantiator.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>jar://$PROJECT_DIR$/../../../../GRADLE_USER_HOME/caches/modules-2/files-2.1/javax/javaee-api/6.0/d6f416983ea13c334d5c599a9045414ecaf5d66d/javaee-api-6.0.jar!/javax/enterprise/inject/spi/Producer.class</url>
+          <line>11</line>
+          <properties class="javax.enterprise.inject.spi.Producer" method="produce">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

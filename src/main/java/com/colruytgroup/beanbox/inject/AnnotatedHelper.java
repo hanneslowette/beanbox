@@ -1,6 +1,5 @@
 package com.colruytgroup.beanbox.inject;
 
-import com.colruytgroup.beanbox.exception.IntrospectException;
 import com.colruytgroup.beanbox.util.ReflectionUtil;
 
 import javax.enterprise.inject.spi.*;
@@ -61,6 +60,10 @@ public final class AnnotatedHelper {
             for (Method method : c.getDeclaredMethods()) {
                 method.setAccessible(true);
 
+                if (method.getAnnotations().length == 0) {
+                    continue; // only add methods that have an annotation
+                }
+
                 Set<Annotation> annotations = new HashSet<>(Arrays.asList(method.getDeclaredAnnotations()));
                 AnnotatedMethod<T> annotated = new AnnotatedMethodImpl<>(method.getReturnType(), annotations, method, type);
 
@@ -96,6 +99,11 @@ public final class AnnotatedHelper {
             Class<? super T> c = ReflectionUtil.cast(t);
             for (Field field : c.getDeclaredFields()) {
                 field.setAccessible(true);
+
+                if (field.getAnnotations().length == 0) {
+                    continue;
+                }
+
                 Set<Annotation> annotations = new HashSet<>(Arrays.asList(field.getAnnotations()));
                 fields.add(new AnnotatedFieldImpl<>(field.getType(), annotations, field, type));
             }
@@ -111,7 +119,7 @@ public final class AnnotatedHelper {
      * @param <T>  The generic type of the class
      * @return A new introspected AnnotatedType<T>
      */
-    public static <T> AnnotatedType<T> introspect(Class<T> type) {
+    public static <T> AnnotatedType<T> createAnnotatedType(Class<T> type) {
         AnnotatedTypeImpl<T> annotated = new AnnotatedTypeImpl<>(type, ReflectionUtil.resolveTypeClosure(type),
                 ReflectionUtil.resolveAnnotations(type));
 
