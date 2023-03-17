@@ -1,26 +1,35 @@
 # BeanBox
 
-Tiny "mildly Java EE7 specification compliant" testing library for EJB applications. Does not handle remote EJBs.
+Tiny "mildly Java EE7 specification compliant" testing library for Java EE 7 and EJB applications. Does not handle remote EJBs.
 
-# Supported features
+# Features
 
+### Current
 - Programming model
   - Managed beans implemented by a Java class
-    - @PostConstruct and @PreDestroy lifecycle callbacks
-    - Producer methods and fields, disposers
-    - Qualifiers
+    - @PostConstruct lifecycle callback
 - Dependency injection and lookup
   - Field, constructor and initializer/setter injection
   - Type-safe resolution
-  - Programmatic lookup via javax.enterprise.inject.Instance
   - Injection point metadata
 - Scopes and contexts
-- Decorators
 - Persistence context
   - test-level transaction management
 - Mockito support
   - Inject mocks into the classes
   - Allow @Spy instances
+### Planned
+- Programming model
+  - Managed beans implemented by a Java class
+    - @PreDestroy lifecycle callback
+    - Producer methods and fields, disposers
+    - Qualifiers
+- Decorators
+- Mockito support
+  - Inject mocks into the classes
+  - Allow @Spy instances
+
+
 
 # Usage
 
@@ -49,6 +58,9 @@ import com.colruytgroup.beanbox.BeanBoxRunner;
 
 @RunWith(BeanBoxRunner.class)
 public class TestClass {
+
+  @Inject
+  private SomeEJB someEjb;
     
 }
 ```
