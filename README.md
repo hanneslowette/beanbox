@@ -58,6 +58,9 @@ import com.colruytgroup.beanbox.BeanBoxRunner;
 
 @RunWith(BeanBoxRunner.class)
 public class TestClass {
+
+  @Inject
+  private SomeEJB someEjb;
     
 }
 ```
