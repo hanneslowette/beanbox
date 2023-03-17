@@ -6,40 +6,51 @@ import com.colruytgroup.beanbox.util.ReflectionUtil;
 
 import javax.enterprise.context.spi.CreationalContext;
 import javax.enterprise.inject.InjectionException;
-import javax.enterprise.inject.spi.AnnotatedConstructor;
-import javax.enterprise.inject.spi.AnnotatedParameter;
-import javax.enterprise.inject.spi.Bean;
-import javax.enterprise.inject.spi.BeanManager;
+import javax.enterprise.inject.spi.*;
+import javax.persistence.Parameter;
 import java.lang.reflect.Constructor;
+import java.util.List;
 
 public class ConstructorInjectionPoint<T> extends AbstractInjectionPoint<T, Constructor<T>> {
 
-    public ConstructorInjectionPoint(Bean<T> bean, AnnotatedConstructor<T> member) {
+    private final List<ParameterInjectionPoint<T>> parameters;
+
+    public ConstructorInjectionPoint(Bean<T> bean, AnnotatedMember<T> member, List<ParameterInjectionPoint<T>> parameters) {
         super(bean, member);
+        this.parameters = parameters;
     }
 
-    @Override
-    public void inject(Object instance, BeanManager manager, CreationalContext<T> context) throws BeanBoxException {
-        try {
-            if (instance != null)
-                throw new InjectionException("attempted to inject constructor of " + super.getType() + " but instance already present");
+    /**
+     * Attempts to create a new instance of a class by injecting the parameters of the given constructor
+     *
+     * @param context
+     * @param manager
+     * @return
+     * @throws ReflectiveOperationException
+     */
+    public T newInstance(CreationalContext<T> context, BeanManager manager) throws ReflectiveOperationException {
+        AnnotatedConstructor<T> annotated = ReflectionUtil.cast(super.getAnnotated());
+        Constructor<T> constructor = ReflectionUtil.cast(super.getMember());
 
-            AnnotatedConstructor<T> annotated = ReflectionUtil.cast(super.getAnnotated());
-            Constructor<T> constructor = ReflectionUtil.cast(super.getMember());
+        Object[] parameters = new Object[annotated.getParameters().size()];
+        for (ParameterInjectionPoint<T> injectionPoint : this.parameters) {
+            AnnotatedParameter<T> annotatedParameter = injectionPoint.getAnnotated();
 
-            Object[] parameters = new Object[annotated.getParameters().size()];
-            for (AnnotatedParameter<T> parameter : annotated.getParameters()) {
-                if (parameters[parameter.getPosition()] != null)
-                    throw new InjectionException("attempted to inject parameter for type " + super.getType() +
-                            " but object already present for position " + parameter.getPosition());
-
-                parameters[parameter.getPosition()] = manager.getInjectableReference(this, context);
+            if (annotatedParameter.getPosition() < 0 || annotatedParameter.getPosition() >= parameters.length) {
+                throw new InjectionException("parameter index out of bounds, expected [0, " + parameters.length +
+                        "], was " + annotatedParameter.getPosition());
+            }
+            if (parameters[annotatedParameter.getPosition()] != null) {
+                throw new InjectionException("attempted to inject parameter for type " + super.getType() +
+                        " but object already present for position " + annotatedParameter.getPosition());
             }
 
-            context.push(constructor.newInstance(parameters));
-        } catch (ReflectiveOperationException ex) {
-            throw new BeanInstantiationException("could not create object for bean " + super.getType(), ex);
+            parameters[annotatedParameter.getPosition()] = manager.getInjectableReference(injectionPoint, context);
         }
+
+        return constructor.newInstance(parameters);
     }
+
+
 
 }

@@ -34,7 +34,7 @@ public class BeanContainerImpl implements BeanContainer {
             }
             return qualifiedBeans;
         } else {
-            return Collections.singleton(beans.get(type));
+            return Collections.<Bean<?>>singleton(beans.get(type));
         }
 
     }

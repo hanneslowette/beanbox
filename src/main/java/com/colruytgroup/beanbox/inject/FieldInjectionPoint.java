@@ -17,7 +17,13 @@ public class FieldInjectionPoint<T> extends AbstractInjectionPoint<T, Field> {
         super(bean, member);
     }
 
-    @Override
+    /**
+     *
+     * @param instance
+     * @param manager
+     * @param context
+     * @throws BeanBoxException
+     */
     public void inject(Object instance, BeanManager manager, CreationalContext<T> context) throws BeanBoxException {
         try {
             if (instance == null) {
@@ -27,7 +33,9 @@ public class FieldInjectionPoint<T> extends AbstractInjectionPoint<T, Field> {
             }
 
             Field field = ReflectionUtil.cast(super.getMember());
-            field.set(instance, manager.getInjectableReference(this, context));
+            Bean<?> bean = manager.resolve(manager.getBeans(field.getType()));
+
+            field.set(instance, manager.getReference(bean, field.getType(), context));
         } catch (ReflectiveOperationException ex) {
             throw new BeanInstantiationException("could not inject fields for bean " + super.getType());
         }

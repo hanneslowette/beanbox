@@ -15,7 +15,7 @@ public class BeanBox {
         this.manager = manager;
     }
 
-    public static BeanBox create() throws BeanBoxException {
+    public static BeanBox create(Class<?> source) throws BeanBoxException {
         BeanBoxBeanManager manager = new BeanBoxBeanManager();
 
         manager.addContext(new MockitoContext());

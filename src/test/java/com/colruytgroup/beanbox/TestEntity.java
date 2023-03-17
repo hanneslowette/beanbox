@@ -10,16 +10,34 @@ public class TestEntity {
     @PersistenceContext(unitName = "test")
     private EntityManager manager;
 
+    private final TestEJB test;
+
     @EJB
-    private TestEJB test;
+    private TestEJB fieldInjected;
 
     @Inject
-    public TestEntity() {
-
+    public TestEntity(TestEJB test) {
+        this.test = test;
     }
 
     public void test(int test) {
 
     }
 
+    public EntityManager getManager() {
+        return manager;
+    }
+
+    public TestEJB getTest() {
+        return test;
+    }
+
+    public TestEJB getFieldInjected() {
+        return fieldInjected;
+    }
+
+    public void setFieldInjected(TestEJB fieldInjected) {
+        if (fieldInjected != null)
+            this.fieldInjected = fieldInjected;
+    }
 }

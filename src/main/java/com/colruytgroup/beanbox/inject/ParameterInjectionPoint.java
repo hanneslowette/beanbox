@@ -3,56 +3,59 @@ package com.colruytgroup.beanbox.inject;
 import com.colruytgroup.beanbox.exception.BeanBoxException;
 
 import javax.enterprise.context.spi.CreationalContext;
-import javax.enterprise.inject.InjectionException;
 import javax.enterprise.inject.spi.*;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Member;
 import java.lang.reflect.Type;
 import java.util.Set;
 
-public abstract class AbstractInjectionPoint<T, M extends Member> implements InjectionPoint {
+public class ParameterInjectionPoint<T> implements InjectionPoint {
 
     private final Bean<T> bean;
-    private final AnnotatedMember<T> member;
+    private final AnnotatedParameter<T> parameter;
 
-    public AbstractInjectionPoint(Bean<T> bean, AnnotatedMember<T> member) {
+    public ParameterInjectionPoint(Bean<T> bean, AnnotatedParameter<T> parameter) {
         this.bean = bean;
-        this.member = member;
+        this.parameter = parameter;
     }
+
+    public void inject(BeanManager manager, CreationalContext<T> context) {
+
+    }
+
 
     @Override
     public Type getType() {
-        return bean.getBeanClass();
+        return parameter.getBaseType();
     }
 
     @Override
     public Set<Annotation> getQualifiers() {
-        return bean.getQualifiers();
+        return parameter.getAnnotations();
     }
 
     @Override
     public Bean<?> getBean() {
-        return this.bean;
+        return bean;
     }
 
     @Override
     public Member getMember() {
-        return member.getJavaMember();
+        return null;
     }
 
     @Override
-    public Annotated getAnnotated() {
-        return member;
+    public AnnotatedParameter<T> getAnnotated() {
+        return parameter;
     }
 
     @Override
     public boolean isDelegate() {
-        return false; // Delegates not supported
+        return false;
     }
 
     @Override
     public boolean isTransient() {
-        return false; // Transient not supported
+        return false;
     }
-
 }

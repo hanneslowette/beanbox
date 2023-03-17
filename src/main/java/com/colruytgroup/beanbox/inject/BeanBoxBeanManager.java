@@ -42,6 +42,7 @@ public class BeanBoxBeanManager extends AbstractBeanManager {
 
     @Override
     public <T> InjectionTarget<T> createInjectionTarget(AnnotatedType<T> annotatedType) {
+
         return null;
     }
 

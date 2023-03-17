@@ -1,5 +1,7 @@
 package com.colruytgroup.beanbox.inject;
 
+import com.colruytgroup.beanbox.exception.BeanInstantiationException;
+
 import javax.enterprise.context.spi.CreationalContext;
 import javax.enterprise.inject.spi.BeanManager;
 
@@ -11,6 +13,6 @@ public interface Instantiator<T> {
      * @param manager
      * @return
      */
-    T produce(CreationalContext<T> creationalContext, BeanManager manager);
+    T produce(CreationalContext<T> creationalContext, BeanManager manager) throws BeanInstantiationException;
 
 }

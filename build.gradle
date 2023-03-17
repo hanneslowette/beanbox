@@ -5,6 +5,11 @@ plugins {
 group 'org.example'
 version '1.0-SNAPSHOT'
 
+plugins.withType(JavaPlugin) {
+    sourceCompatibility = '1.7'
+    targetCompatibility = '1.7'
+}
+
 repositories {
     mavenCentral()
 }
@@ -22,8 +27,4 @@ dependencies {
     testImplementation group: 'org.mockito', name: 'mockito-core', version: '4.11.0'
     testImplementation group: 'j2ee', name: 'j2ee', version: '6.0'
 
-}
-
-test {
-//    useJUnitPlatform()
 }
