@@ -1,6 +1,6 @@
 # BeanBox
 
-Tiny "mildly Java EE7 specification compliant" testing library for EJB applications. Does not handle remote EJBs.
+Tiny "mildly Java EE7 specification compliant" testing library for Java EE 7 and EJB applications. Does not handle remote EJBs.
 
 # Features
 
