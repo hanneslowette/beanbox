@@ -25,9 +25,6 @@ Tiny "mildly Java EE7 specification compliant" testing library for Java EE 7 and
     - Producer methods and fields, disposers
     - Qualifiers
 - Decorators
-- Mockito support
-  - Inject mocks into the classes
-  - Allow @Spy instances
 
 
 
